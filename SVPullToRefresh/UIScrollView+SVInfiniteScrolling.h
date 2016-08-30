@@ -11,17 +11,15 @@
 
 @class SVInfiniteScrollingView;
 
-enum {
+typedef NS_ENUM(NSUInteger, SVInfiniteScrollingDirection) {
     SVInfiniteScrollingDirectionBottom = 0,
     SVInfiniteScrollingDirectionTop = 1
 };
 
-typedef NSUInteger SVInfiniteScrollingDirection;
-
 @interface UIScrollView (SVInfiniteScrolling)
 
 - (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler;
-- (void)addInfiniteScrollingWithScrollingDiretion:(SVInfiniteScrollingDirection)direction actionHandler:(void (^)(void))actionHandler;
+- (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler direction:(SVInfiniteScrollingDirection)direction;
 - (void)triggerInfiniteScrolling;
 
 @property (nonatomic, strong, readonly) SVInfiniteScrollingView *infiniteScrollingView;
@@ -30,14 +28,12 @@ typedef NSUInteger SVInfiniteScrollingDirection;
 @end
 
 
-enum {
+typedef NS_ENUM(NSUInteger, SVInfiniteScrollingState) {
 	SVInfiniteScrollingStateStopped = 0,
     SVInfiniteScrollingStateTriggered,
     SVInfiniteScrollingStateLoading,
     SVInfiniteScrollingStateAll = 10
 };
-
-typedef NSUInteger SVInfiniteScrollingState;
 
 @interface SVInfiniteScrollingView : UIView
 

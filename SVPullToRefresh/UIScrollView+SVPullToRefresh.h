@@ -17,7 +17,7 @@
 
 typedef NS_ENUM(NSUInteger, SVPullToRefreshPosition) {
     SVPullToRefreshPositionTop = 0,
-    SVPullToRefreshPositionBottom,
+    SVPullToRefreshPositionBottom
 };
 
 - (void)addPullToRefreshWithActionHandler:(void (^)(void))actionHandler DEPRECATED_MSG_ATTRIBUTE("Use `addPullToRefresh:withActionHandler:` instead");
