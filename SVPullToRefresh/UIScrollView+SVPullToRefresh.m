@@ -131,6 +131,10 @@ static char UIScrollViewPullToRefreshView;
 }
 
 - (void)setShowsPullToRefresh:(BOOL)showsPullToRefresh {
+    
+    if (!self.pullToRefreshView)
+        return;
+    
     self.pullToRefreshView.hidden = !showsPullToRefresh;
     
     if(!showsPullToRefresh) {
