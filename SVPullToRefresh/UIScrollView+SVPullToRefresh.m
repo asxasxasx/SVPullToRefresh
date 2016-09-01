@@ -535,10 +535,10 @@ static char UIScrollViewPullToRefreshView;
         paragraphStyle.lineBreakMode = self.subtitleLabel.lineBreakMode;
         attributes = @{ NSFontAttributeName:self.subtitleLabel.font,
                         NSParagraphStyleAttributeName:paragraphStyle };
-        CGSize subtitleSize = [self.titleLabel.text boundingRectWithSize:CGSizeMake(labelMaxWidth, CGFLOAT_MAX)
-                                                                 options:NSStringDrawingUsesLineFragmentOrigin
-                                                              attributes:attributes
-                                                                 context:nil].size;
+        CGSize subtitleSize = [self.subtitleLabel.text boundingRectWithSize:CGSizeMake(labelMaxWidth, CGFLOAT_MAX)
+                                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                                 attributes:attributes
+                                                                    context:nil].size;
         
         CGFloat maxLabelWidth = MAX(titleSize.width, subtitleSize.width);
         
